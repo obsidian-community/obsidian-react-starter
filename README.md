@@ -1,5 +1,25 @@
 # obsidian-react-starter
 
-A starter template for creating a React plugin in Obsidian.
+A starter template for creating an [Obsidian](https://obsidian.md/) plugin with [ReactJS](https://reactjs.org/).
 
-This is a super messy POC. Please don't use. I'm not even sure I would suggest using React in Obsidian. PreactJS is probably a better choice if you're set on having a VDOM...
+## Features
+
+This project comes preconfigured with Typescript, Babel, and Rollup.js.
+
+## Getting Started
+
+Click "use this template" to create your own fork of this repo.
+
+```bash
+# for local development
+npm install
+npm run dev
+
+# for a production bundle
+npm install
+npm run build
+```
+
+## Stats
+
+The production output of this sample plugin is **~200 KB**.
