@@ -8,7 +8,7 @@ This project comes preconfigured with Typescript, Babel, and Rollup.js.
 
 ## Getting Started
 
-Click "use this template" to create your own fork of this repo.
+Click "use this template" to create your own fork of this repo. Make sure to reference [the Official sample plugin](https://github.com/obsidianmd/obsidian-sample-plugin) for information about how to get started with the Obsidian API and how to submit your plugin to the Community Plugin Gallery.
 
 ```bash
 # for local development
