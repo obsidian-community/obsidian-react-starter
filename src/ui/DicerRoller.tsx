@@ -1,7 +1,9 @@
 import * as React from "react";
 
 function randomNumber(min: number, max: number): number {
-  return Math.random() * (max - min) + min;
+  return Math.floor(
+    Math.random() * (max - min + 1) + min
+  )
 }
 
 function rollDice(
@@ -26,19 +28,19 @@ export default function DiceRoller(): JSX.Element {
 
   return (
     <>
-      <div>
+      <div className="DiceRoller__container">
         <input
           type="number"
           value={diceSides}
           onChange={(e) => setNumDice(parseInt(e.target.value, 10))}
         />
-        D
+        D{` `}
         <input
           type="number"
           value={numDice}
           onChange={(e) => setDiceSides(parseInt(e.target.value, 10))}
         />
-        +
+        +{` `}
         <input
           type="number"
           value={modifier}
