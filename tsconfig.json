@@ -4,6 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "inlineSourceMap": true,
     "inlineSources": true,
+    "jsx": "react",
     "module": "ESNext",
     "target": "esnext",
     "allowJs": true,
@@ -12,5 +13,5 @@
     "importHelpers": true,
     "lib": ["dom", "esnext"]
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

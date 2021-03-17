@@ -4,11 +4,13 @@ import ReactDOM from "react-dom";
 
 import DiceRoller from "./ui/DicerRoller";
 
+const VIEW_TYPE = "react-view";
+
 class MyReactView extends ItemView {
-  private reactComponent: any;
+  private reactComponent: React.ReactElement;
 
   getViewType(): string {
-    return "react-view";
+    return VIEW_TYPE;
   }
 
   getDisplayText(): string {
@@ -20,10 +22,10 @@ class MyReactView extends ItemView {
   }
 
   async onOpen(): Promise<void> {
-    this.reactComponent = ReactDOM.render(
-      React.createElement(DiceRoller),
-      (this as any).contentEl
-    );
+    this.reactComponent = React.createElement(DiceRoller);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ReactDOM.render(this.reactComponent, (this as any).contentEl);
   }
 }
 
@@ -32,7 +34,7 @@ export default class ReactStarterPlugin extends Plugin {
 
   async onload(): Promise<void> {
     this.registerView(
-      "react-view",
+      VIEW_TYPE,
       (leaf: WorkspaceLeaf) => (this.view = new MyReactView(leaf))
     );
 
@@ -40,11 +42,11 @@ export default class ReactStarterPlugin extends Plugin {
   }
 
   onLayoutReady(): void {
-    if (this.app.workspace.getLeavesOfType("react-view").length) {
+    if (this.app.workspace.getLeavesOfType(VIEW_TYPE).length) {
       return;
     }
     this.app.workspace.getRightLeaf(false).setViewState({
-      type: "react-view",
+      type: VIEW_TYPE,
     });
   }
 }
